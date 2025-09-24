@@ -36,15 +36,25 @@ class MainActivity : ComponentActivity() {
         setContent {
             CuadriculaTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
+                    val exampleTopic = Topic(
+                        name = R.string.photography,
+                        availableCourses = 58,
+                        imageRes = R.drawable.photography
+                    )
+
+
+                    TopicCard(
+                        topic = exampleTopic,
+                        modifier = Modifier
+                            .padding(innerPadding)
+                            .padding(16.dp)
                     )
                 }
             }
         }
     }
 }
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
